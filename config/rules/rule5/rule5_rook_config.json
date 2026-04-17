@@ -1,0 +1,218 @@
+{
+  "scenario": {
+    "shape": [
+      8,
+      8
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "wrapped": false
+  },
+  "cells": {
+    "default": {
+      "delay": "transport",
+      "model": "adaptiveChessVariant",
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": [
+        {
+          "type": "relative",
+          "neighbors": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -2,
+              0
+            ],
+            [
+              -3,
+              0
+            ],
+            [
+              -4,
+              0
+            ],
+            [
+              -5,
+              0
+            ],
+            [
+              -6,
+              0
+            ],
+            [
+              -7,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              -2
+            ],
+            [
+              0,
+              -3
+            ],
+            [
+              0,
+              -4
+            ],
+            [
+              0,
+              -5
+            ],
+            [
+              0,
+              -6
+            ],
+            [
+              0,
+              -7
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    "rook_seed": {
+      "state": {
+        "alive": 1,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "cell_map": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          3
+        ]
+      ]
+    }
+  },
+  "viewer": [
+    {
+      "colors": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "breaks": [
+        0,
+        0.5,
+        1
+      ],
+      "field": "alive"
+    }
+  ]
+}

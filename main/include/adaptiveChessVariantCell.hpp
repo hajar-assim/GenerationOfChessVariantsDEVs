@@ -61,13 +61,27 @@ public:
             int minNeeded = static_cast<int>(std::floor(state.birthLow * totalNeighbors));
             int maxAllowed = static_cast<int>(std::ceil(state.birthHigh * totalNeighbors));
             if (minNeeded < 1) minNeeded = 1;  // need at least 1 neighbor to be born
-            state.alive = (liveCount >= minNeeded && liveCount <= maxAllowed) ? 1 : 0;
+            bool inRange = (liveCount >= minNeeded && liveCount <= maxAllowed);
+            // exclude gap sub-range if defined (e.g. Rule 5 B235 excludes count 4)
+            if (inRange && state.birthGapLow >= 0) {
+                int gapMin = static_cast<int>(std::floor(state.birthGapLow * totalNeighbors));
+                int gapMax = static_cast<int>(std::ceil(state.birthGapHigh * totalNeighbors));
+                if (liveCount >= gapMin && liveCount <= gapMax) inRange = false;
+            }
+            state.alive = inRange ? 1 : 0;
         } else {
             // survival condition
             int minNeeded = static_cast<int>(std::floor(state.survivalLow * totalNeighbors));
             int maxAllowed = static_cast<int>(std::ceil(state.survivalHigh * totalNeighbors));
             if (minNeeded < 1) minNeeded = 1;
-            state.alive = (liveCount >= minNeeded && liveCount <= maxAllowed) ? 1 : 0;
+            bool inRange = (liveCount >= minNeeded && liveCount <= maxAllowed);
+            // exclude gap sub-range if defined
+            if (inRange && state.survivalGapLow >= 0) {
+                int gapMin = static_cast<int>(std::floor(state.survivalGapLow * totalNeighbors));
+                int gapMax = static_cast<int>(std::ceil(state.survivalGapHigh * totalNeighbors));
+                if (liveCount >= gapMin && liveCount <= gapMax) inRange = false;
+            }
+            state.alive = inRange ? 1 : 0;
         }
 
         return state;

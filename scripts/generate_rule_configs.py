@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
-"""Generate JSON configs for all 5 Fridenfalk rules × 5 piece types."""
+"""Generate JSON configs for all 5 Fridenfalk rules x 5 piece types."""
 
 import json
 import os
 
 # Fridenfalk rules mapped to adaptive density windows
 # Rule 1: B23/S23, Rule 2: B24/S24, Rule 3: B25/S25, Rule 4: B26/S26
+# Rule 5: B235/S235 (non-contiguous, uses gap to exclude count 4)
 RULES = {
     1: {"birthLow": 0.25, "birthHigh": 0.375, "survivalLow": 0.25, "survivalHigh": 0.375},
     2: {"birthLow": 0.25, "birthHigh": 0.50,  "survivalLow": 0.25, "survivalHigh": 0.50},
     3: {"birthLow": 0.25, "birthHigh": 0.625, "survivalLow": 0.25, "survivalHigh": 0.625},
     4: {"birthLow": 0.25, "birthHigh": 0.75,  "survivalLow": 0.25, "survivalHigh": 0.75},
+    # Rule 5: B235/S235 — non-contiguous. Range [2,5] with gap at 4.
+    # Gap density 0.5 maps to count 4 on 8-neighbor topologies.
+    5: {"birthLow": 0.25, "birthHigh": 0.625, "survivalLow": 0.25, "survivalHigh": 0.625,
+        "birthGapLow": 0.50, "birthGapHigh": 0.50,
+        "survivalGapLow": 0.50, "survivalGapHigh": 0.50},
 }
 
 # Neighbourhood definitions
@@ -157,10 +163,15 @@ echo "Running {config_name}..."
         generated_configs.append(config_name)
         print(f"  {filename}")
 
-# Generate master run script
-master_script = "#!/bin/bash\n# Run all Fridenfalk rule scenarios\n"
-for name in generated_configs:
-    master_script += f'bash scripts/run_{name}.sh\n'
+# Generate master run script (loop-based, uses subfolder paths)
+rule_nums = sorted(RULES.keys())
+master_script = "#!/bin/bash\n# Run all Fridenfalk rule scenarios (rules {}, all {} piece types)\n".format(
+    "-".join(str(r) for r in rule_nums), len(PIECES))
+master_script += "for r in {}; do\n".format(" ".join(str(r) for r in rule_nums))
+master_script += '    for f in scripts/rules/rule${r}/run_*.sh; do\n'
+master_script += '        bash "$f"\n'
+master_script += '    done\n'
+master_script += 'done\n'
 
 master_path = os.path.join(script_dir, "run_all_rules.sh")
 with open(master_path, "w") as f:

@@ -20,14 +20,28 @@ struct AdaptiveChessVariantState {
     double survivalLow;  // minimum fraction of live neighbors for survival
     double survivalHigh; // maximum fraction of live neighbors for survival
 
+    // optional gap: exclude a sub-range from birth/survival
+    // used by Rule 5 (B235/S235) where count 4 is excluded from the [2,5] range
+    // set to -1 to disable (no gap)
+    double birthGapLow;
+    double birthGapHigh;
+    double survivalGapLow;
+    double survivalGapHigh;
+
     AdaptiveChessVariantState()
         : alive(0),
           birthLow(0.25), birthHigh(0.375),
-          survivalLow(0.25), survivalHigh(0.375) {}
+          survivalLow(0.25), survivalHigh(0.375),
+          birthGapLow(-1), birthGapHigh(-1),
+          survivalGapLow(-1), survivalGapHigh(-1) {}
 
-    AdaptiveChessVariantState(int a, double bL, double bH, double sL, double sH)
+    AdaptiveChessVariantState(int a, double bL, double bH, double sL, double sH,
+                              double bgL = -1, double bgH = -1,
+                              double sgL = -1, double sgH = -1)
         : alive(a), birthLow(bL), birthHigh(bH),
-          survivalLow(sL), survivalHigh(sH) {}
+          survivalLow(sL), survivalHigh(sH),
+          birthGapLow(bgL), birthGapHigh(bgH),
+          survivalGapLow(sgL), survivalGapHigh(sgH) {}
 };
 
 inline bool operator!=(const AdaptiveChessVariantState& a, const AdaptiveChessVariantState& b) {
@@ -45,6 +59,10 @@ inline void from_json(const nlohmann::json& j, AdaptiveChessVariantState& s) {
     if (j.contains("birthHigh"))   j.at("birthHigh").get_to(s.birthHigh);
     if (j.contains("survivalLow")) j.at("survivalLow").get_to(s.survivalLow);
     if (j.contains("survivalHigh")) j.at("survivalHigh").get_to(s.survivalHigh);
+    if (j.contains("birthGapLow"))    j.at("birthGapLow").get_to(s.birthGapLow);
+    if (j.contains("birthGapHigh"))   j.at("birthGapHigh").get_to(s.birthGapHigh);
+    if (j.contains("survivalGapLow")) j.at("survivalGapLow").get_to(s.survivalGapLow);
+    if (j.contains("survivalGapHigh")) j.at("survivalGapHigh").get_to(s.survivalGapHigh);
 }
 
 #endif // ADAPTIVE_CHESS_VARIANT_STATE_HPP
