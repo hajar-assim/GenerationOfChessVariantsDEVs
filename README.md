@@ -1,1 +1,1 @@
-# GenerationOfChessVariantsDEVs
+# ChessVariantsDEVS
