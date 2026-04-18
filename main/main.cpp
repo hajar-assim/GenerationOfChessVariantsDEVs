@@ -5,6 +5,7 @@
 
 #include "nlohmann/json.hpp"
 #include <cadmium/modeling/celldevs/grid/coupled.hpp>
+#include <cadmium/modeling/celldevs/asymm/coupled.hpp>
 #include <cadmium/simulation/logger/csv.hpp>
 #include <cadmium/simulation/root_coordinator.hpp>
 #include <chrono>
@@ -14,6 +15,7 @@
 #include <filesystem>
 #include "include/chessVariantCell.hpp"
 #include "include/adaptiveChessVariantCell.hpp"
+#include "include/asymmChessVariantCell.hpp"
 
 using namespace cadmium::celldevs;
 using namespace cadmium;
@@ -37,6 +39,18 @@ std::shared_ptr<GridCell<AdaptiveChessVariantState, double>> addAdaptiveGridCell
     auto cellModel = cellConfig->cellModel;
     if (cellModel == "adaptiveChessVariant") {
         return std::make_shared<AdaptiveChessVariantCell>(cellId, cellConfig);
+    } else {
+        throw std::bad_typeid();
+    }
+}
+
+// factory for asymmetric rule-zone cells
+std::shared_ptr<AsymmCell<AdaptiveChessVariantState, double>> addAsymmChessVariantCell(
+    const std::string& cellId,
+    const std::shared_ptr<const AsymmCellConfig<AdaptiveChessVariantState, double>>& cellConfig) {
+    auto cellModel = cellConfig->cellModel;
+    if (cellModel == "asymmChessVariant") {
+        return std::make_shared<AsymmChessVariantCell>(cellId, cellConfig);
     } else {
         throw std::bad_typeid();
     }
@@ -71,7 +85,19 @@ int main(int argc, char** argv) {
     std::string modelType = detectModelType(configFilePath);
     std::cout << "Detected model type: " << modelType << std::endl;
 
-    if (modelType == "adaptiveChessVariant") {
+    if (modelType == "asymmChessVariant") {
+        // asymmetric rule-zone model - per-cell rule parameterization
+        auto model = std::make_shared<AsymmCellDEVSCoupled<AdaptiveChessVariantState, double>>(
+            "asymmChessVariant", addAsymmChessVariantCell, configFilePath);
+        model->buildModel();
+
+        auto rootCoordinator = RootCoordinator(model);
+        rootCoordinator.setLogger<CSVLogger>(logFile, ";");
+
+        rootCoordinator.start();
+        rootCoordinator.simulate(simTime);
+        rootCoordinator.stop();
+    } else if (modelType == "adaptiveChessVariant") {
         // adaptive density-based model
         auto model = std::make_shared<GridCellDEVSCoupled<AdaptiveChessVariantState, double>>(
             "adaptiveChessVariant", addAdaptiveGridCell, configFilePath);

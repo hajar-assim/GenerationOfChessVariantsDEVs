@@ -17,7 +17,29 @@ Options:
 
 import argparse
 import csv
+import re
 import sys
+
+# Cell IDs come in two formats:
+#   "(r,c)"   - GridCell (symmetric)
+#   "rR_cC"   - AsymmCell (asymmetric rule-zone configs)
+_ASYMM_ID = re.compile(r"^r(\d+)_c(\d+)$")
+
+
+def parse_cell_id(model_name):
+    """Return (row, col) for either grid or asymm cell IDs, or None."""
+    name = model_name.strip()
+    if name.startswith("(") and name.endswith(")"):
+        parts = name[1:-1].split(",")
+        if len(parts) == 2:
+            try:
+                return int(parts[0]), int(parts[1])
+            except ValueError:
+                return None
+    m = _ASYMM_ID.match(name)
+    if m:
+        return int(m.group(1)), int(m.group(2))
+    return None
 
 
 def parse_log(filepath):
@@ -38,13 +60,11 @@ def parse_log(filepath):
             if port_name != "":
                 continue
 
-            # parse coordinate from model_name like "(3,6)"
-            model_name = model_name.strip()
-            if not (model_name.startswith("(") and model_name.endswith(")")):
+            # parse coordinate from either "(r,c)" grid IDs or "rR_cC" asymm IDs
+            rc = parse_cell_id(model_name)
+            if rc is None:
                 continue
-
-            parts = model_name[1:-1].split(",")
-            r, c = int(parts[0]), int(parts[1])
+            r, c = rc
 
             # parse alive value from data like "<1>" or "<0>"
             alive = int(data.strip().strip("<>"))
