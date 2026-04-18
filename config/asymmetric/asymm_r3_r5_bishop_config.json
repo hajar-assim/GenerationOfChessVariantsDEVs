@@ -1,0 +1,1625 @@
+{
+  "cells": {
+    "default": {
+      "delay": "transport",
+      "model": "asymmChessVariant",
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.375,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.375,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      }
+    },
+    "r0_c0": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r0_c0": 1,
+        "r1_c1": 1,
+        "r2_c2": 1,
+        "r3_c3": 1,
+        "r4_c4": 1,
+        "r5_c5": 1,
+        "r6_c6": 1,
+        "r7_c7": 1
+      }
+    },
+    "r0_c1": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r0_c1": 1,
+        "r1_c0": 1,
+        "r1_c2": 1,
+        "r2_c3": 1,
+        "r3_c4": 1,
+        "r4_c5": 1,
+        "r5_c6": 1,
+        "r6_c7": 1
+      }
+    },
+    "r0_c2": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r0_c2": 1,
+        "r1_c1": 1,
+        "r1_c3": 1,
+        "r2_c0": 1,
+        "r2_c4": 1,
+        "r3_c5": 1,
+        "r4_c6": 1,
+        "r5_c7": 1
+      }
+    },
+    "r0_c3": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r0_c3": 1,
+        "r1_c2": 1,
+        "r1_c4": 1,
+        "r2_c1": 1,
+        "r2_c5": 1,
+        "r3_c0": 1,
+        "r3_c6": 1,
+        "r4_c7": 1
+      }
+    },
+    "r0_c4": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r0_c4": 1,
+        "r1_c3": 1,
+        "r1_c5": 1,
+        "r2_c2": 1,
+        "r2_c6": 1,
+        "r3_c1": 1,
+        "r3_c7": 1,
+        "r4_c0": 1
+      }
+    },
+    "r0_c5": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r0_c5": 1,
+        "r1_c4": 1,
+        "r1_c6": 1,
+        "r2_c3": 1,
+        "r2_c7": 1,
+        "r3_c2": 1,
+        "r4_c1": 1,
+        "r5_c0": 1
+      }
+    },
+    "r0_c6": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r0_c6": 1,
+        "r1_c5": 1,
+        "r1_c7": 1,
+        "r2_c4": 1,
+        "r3_c3": 1,
+        "r4_c2": 1,
+        "r5_c1": 1,
+        "r6_c0": 1
+      }
+    },
+    "r0_c7": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r0_c7": 1,
+        "r1_c6": 1,
+        "r2_c5": 1,
+        "r3_c4": 1,
+        "r4_c3": 1,
+        "r5_c2": 1,
+        "r6_c1": 1,
+        "r7_c0": 1
+      }
+    },
+    "r1_c0": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r1_c0": 1,
+        "r0_c1": 1,
+        "r2_c1": 1,
+        "r3_c2": 1,
+        "r4_c3": 1,
+        "r5_c4": 1,
+        "r6_c5": 1,
+        "r7_c6": 1
+      }
+    },
+    "r1_c1": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r1_c1": 1,
+        "r0_c0": 1,
+        "r0_c2": 1,
+        "r2_c0": 1,
+        "r2_c2": 1,
+        "r3_c3": 1,
+        "r4_c4": 1,
+        "r5_c5": 1,
+        "r6_c6": 1,
+        "r7_c7": 1
+      }
+    },
+    "r1_c2": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r1_c2": 1,
+        "r0_c1": 1,
+        "r0_c3": 1,
+        "r2_c1": 1,
+        "r2_c3": 1,
+        "r3_c0": 1,
+        "r3_c4": 1,
+        "r4_c5": 1,
+        "r5_c6": 1,
+        "r6_c7": 1
+      }
+    },
+    "r1_c3": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r1_c3": 1,
+        "r0_c2": 1,
+        "r0_c4": 1,
+        "r2_c2": 1,
+        "r2_c4": 1,
+        "r3_c1": 1,
+        "r3_c5": 1,
+        "r4_c0": 1,
+        "r4_c6": 1,
+        "r5_c7": 1
+      }
+    },
+    "r1_c4": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r1_c4": 1,
+        "r0_c3": 1,
+        "r0_c5": 1,
+        "r2_c3": 1,
+        "r2_c5": 1,
+        "r3_c2": 1,
+        "r3_c6": 1,
+        "r4_c1": 1,
+        "r4_c7": 1,
+        "r5_c0": 1
+      }
+    },
+    "r1_c5": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r1_c5": 1,
+        "r0_c4": 1,
+        "r0_c6": 1,
+        "r2_c4": 1,
+        "r2_c6": 1,
+        "r3_c3": 1,
+        "r3_c7": 1,
+        "r4_c2": 1,
+        "r5_c1": 1,
+        "r6_c0": 1
+      }
+    },
+    "r1_c6": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r1_c6": 1,
+        "r0_c5": 1,
+        "r0_c7": 1,
+        "r2_c5": 1,
+        "r2_c7": 1,
+        "r3_c4": 1,
+        "r4_c3": 1,
+        "r5_c2": 1,
+        "r6_c1": 1,
+        "r7_c0": 1
+      }
+    },
+    "r1_c7": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r1_c7": 1,
+        "r0_c6": 1,
+        "r2_c6": 1,
+        "r3_c5": 1,
+        "r4_c4": 1,
+        "r5_c3": 1,
+        "r6_c2": 1,
+        "r7_c1": 1
+      }
+    },
+    "r2_c0": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r2_c0": 1,
+        "r1_c1": 1,
+        "r3_c1": 1,
+        "r0_c2": 1,
+        "r4_c2": 1,
+        "r5_c3": 1,
+        "r6_c4": 1,
+        "r7_c5": 1
+      }
+    },
+    "r2_c1": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r2_c1": 1,
+        "r1_c0": 1,
+        "r1_c2": 1,
+        "r3_c0": 1,
+        "r3_c2": 1,
+        "r0_c3": 1,
+        "r4_c3": 1,
+        "r5_c4": 1,
+        "r6_c5": 1,
+        "r7_c6": 1
+      }
+    },
+    "r2_c2": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r2_c2": 1,
+        "r1_c1": 1,
+        "r1_c3": 1,
+        "r3_c1": 1,
+        "r3_c3": 1,
+        "r0_c0": 1,
+        "r0_c4": 1,
+        "r4_c0": 1,
+        "r4_c4": 1,
+        "r5_c5": 1,
+        "r6_c6": 1,
+        "r7_c7": 1
+      }
+    },
+    "r2_c3": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r2_c3": 1,
+        "r1_c2": 1,
+        "r1_c4": 1,
+        "r3_c2": 1,
+        "r3_c4": 1,
+        "r0_c1": 1,
+        "r0_c5": 1,
+        "r4_c1": 1,
+        "r4_c5": 1,
+        "r5_c0": 1,
+        "r5_c6": 1,
+        "r6_c7": 1
+      }
+    },
+    "r2_c4": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r2_c4": 1,
+        "r1_c3": 1,
+        "r1_c5": 1,
+        "r3_c3": 1,
+        "r3_c5": 1,
+        "r0_c2": 1,
+        "r0_c6": 1,
+        "r4_c2": 1,
+        "r4_c6": 1,
+        "r5_c1": 1,
+        "r5_c7": 1,
+        "r6_c0": 1
+      }
+    },
+    "r2_c5": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r2_c5": 1,
+        "r1_c4": 1,
+        "r1_c6": 1,
+        "r3_c4": 1,
+        "r3_c6": 1,
+        "r0_c3": 1,
+        "r0_c7": 1,
+        "r4_c3": 1,
+        "r4_c7": 1,
+        "r5_c2": 1,
+        "r6_c1": 1,
+        "r7_c0": 1
+      }
+    },
+    "r2_c6": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r2_c6": 1,
+        "r1_c5": 1,
+        "r1_c7": 1,
+        "r3_c5": 1,
+        "r3_c7": 1,
+        "r0_c4": 1,
+        "r4_c4": 1,
+        "r5_c3": 1,
+        "r6_c2": 1,
+        "r7_c1": 1
+      }
+    },
+    "r2_c7": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r2_c7": 1,
+        "r1_c6": 1,
+        "r3_c6": 1,
+        "r0_c5": 1,
+        "r4_c5": 1,
+        "r5_c4": 1,
+        "r6_c3": 1,
+        "r7_c2": 1
+      }
+    },
+    "r3_c0": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r3_c0": 1,
+        "r2_c1": 1,
+        "r4_c1": 1,
+        "r1_c2": 1,
+        "r5_c2": 1,
+        "r0_c3": 1,
+        "r6_c3": 1,
+        "r7_c4": 1
+      }
+    },
+    "r3_c1": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r3_c1": 1,
+        "r2_c0": 1,
+        "r2_c2": 1,
+        "r4_c0": 1,
+        "r4_c2": 1,
+        "r1_c3": 1,
+        "r5_c3": 1,
+        "r0_c4": 1,
+        "r6_c4": 1,
+        "r7_c5": 1
+      }
+    },
+    "r3_c2": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r3_c2": 1,
+        "r2_c1": 1,
+        "r2_c3": 1,
+        "r4_c1": 1,
+        "r4_c3": 1,
+        "r1_c0": 1,
+        "r1_c4": 1,
+        "r5_c0": 1,
+        "r5_c4": 1,
+        "r0_c5": 1,
+        "r6_c5": 1,
+        "r7_c6": 1
+      }
+    },
+    "r3_c3": {
+      "state": {
+        "alive": 1,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r3_c3": 1,
+        "r2_c2": 1,
+        "r2_c4": 1,
+        "r4_c2": 1,
+        "r4_c4": 1,
+        "r1_c1": 1,
+        "r1_c5": 1,
+        "r5_c1": 1,
+        "r5_c5": 1,
+        "r0_c0": 1,
+        "r0_c6": 1,
+        "r6_c0": 1,
+        "r6_c6": 1,
+        "r7_c7": 1
+      }
+    },
+    "r3_c4": {
+      "state": {
+        "alive": 1,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r3_c4": 1,
+        "r2_c3": 1,
+        "r2_c5": 1,
+        "r4_c3": 1,
+        "r4_c5": 1,
+        "r1_c2": 1,
+        "r1_c6": 1,
+        "r5_c2": 1,
+        "r5_c6": 1,
+        "r0_c1": 1,
+        "r0_c7": 1,
+        "r6_c1": 1,
+        "r6_c7": 1,
+        "r7_c0": 1
+      }
+    },
+    "r3_c5": {
+      "state": {
+        "alive": 1,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r3_c5": 1,
+        "r2_c4": 1,
+        "r2_c6": 1,
+        "r4_c4": 1,
+        "r4_c6": 1,
+        "r1_c3": 1,
+        "r1_c7": 1,
+        "r5_c3": 1,
+        "r5_c7": 1,
+        "r0_c2": 1,
+        "r6_c2": 1,
+        "r7_c1": 1
+      }
+    },
+    "r3_c6": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r3_c6": 1,
+        "r2_c5": 1,
+        "r2_c7": 1,
+        "r4_c5": 1,
+        "r4_c7": 1,
+        "r1_c4": 1,
+        "r5_c4": 1,
+        "r0_c3": 1,
+        "r6_c3": 1,
+        "r7_c2": 1
+      }
+    },
+    "r3_c7": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": -1,
+        "birthGapHigh": -1,
+        "survivalGapLow": -1,
+        "survivalGapHigh": -1
+      },
+      "neighborhood": {
+        "r3_c7": 1,
+        "r2_c6": 1,
+        "r4_c6": 1,
+        "r1_c5": 1,
+        "r5_c5": 1,
+        "r0_c4": 1,
+        "r6_c4": 1,
+        "r7_c3": 1
+      }
+    },
+    "r4_c0": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r4_c0": 1,
+        "r3_c1": 1,
+        "r5_c1": 1,
+        "r2_c2": 1,
+        "r6_c2": 1,
+        "r1_c3": 1,
+        "r7_c3": 1,
+        "r0_c4": 1
+      }
+    },
+    "r4_c1": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r4_c1": 1,
+        "r3_c0": 1,
+        "r3_c2": 1,
+        "r5_c0": 1,
+        "r5_c2": 1,
+        "r2_c3": 1,
+        "r6_c3": 1,
+        "r1_c4": 1,
+        "r7_c4": 1,
+        "r0_c5": 1
+      }
+    },
+    "r4_c2": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r4_c2": 1,
+        "r3_c1": 1,
+        "r3_c3": 1,
+        "r5_c1": 1,
+        "r5_c3": 1,
+        "r2_c0": 1,
+        "r2_c4": 1,
+        "r6_c0": 1,
+        "r6_c4": 1,
+        "r1_c5": 1,
+        "r7_c5": 1,
+        "r0_c6": 1
+      }
+    },
+    "r4_c3": {
+      "state": {
+        "alive": 1,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r4_c3": 1,
+        "r3_c2": 1,
+        "r3_c4": 1,
+        "r5_c2": 1,
+        "r5_c4": 1,
+        "r2_c1": 1,
+        "r2_c5": 1,
+        "r6_c1": 1,
+        "r6_c5": 1,
+        "r1_c0": 1,
+        "r1_c6": 1,
+        "r7_c0": 1,
+        "r7_c6": 1,
+        "r0_c7": 1
+      }
+    },
+    "r4_c4": {
+      "state": {
+        "alive": 1,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r4_c4": 1,
+        "r3_c3": 1,
+        "r3_c5": 1,
+        "r5_c3": 1,
+        "r5_c5": 1,
+        "r2_c2": 1,
+        "r2_c6": 1,
+        "r6_c2": 1,
+        "r6_c6": 1,
+        "r1_c1": 1,
+        "r1_c7": 1,
+        "r7_c1": 1,
+        "r7_c7": 1,
+        "r0_c0": 1
+      }
+    },
+    "r4_c5": {
+      "state": {
+        "alive": 1,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r4_c5": 1,
+        "r3_c4": 1,
+        "r3_c6": 1,
+        "r5_c4": 1,
+        "r5_c6": 1,
+        "r2_c3": 1,
+        "r2_c7": 1,
+        "r6_c3": 1,
+        "r6_c7": 1,
+        "r1_c2": 1,
+        "r7_c2": 1,
+        "r0_c1": 1
+      }
+    },
+    "r4_c6": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r4_c6": 1,
+        "r3_c5": 1,
+        "r3_c7": 1,
+        "r5_c5": 1,
+        "r5_c7": 1,
+        "r2_c4": 1,
+        "r6_c4": 1,
+        "r1_c3": 1,
+        "r7_c3": 1,
+        "r0_c2": 1
+      }
+    },
+    "r4_c7": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r4_c7": 1,
+        "r3_c6": 1,
+        "r5_c6": 1,
+        "r2_c5": 1,
+        "r6_c5": 1,
+        "r1_c4": 1,
+        "r7_c4": 1,
+        "r0_c3": 1
+      }
+    },
+    "r5_c0": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r5_c0": 1,
+        "r4_c1": 1,
+        "r6_c1": 1,
+        "r3_c2": 1,
+        "r7_c2": 1,
+        "r2_c3": 1,
+        "r1_c4": 1,
+        "r0_c5": 1
+      }
+    },
+    "r5_c1": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r5_c1": 1,
+        "r4_c0": 1,
+        "r4_c2": 1,
+        "r6_c0": 1,
+        "r6_c2": 1,
+        "r3_c3": 1,
+        "r7_c3": 1,
+        "r2_c4": 1,
+        "r1_c5": 1,
+        "r0_c6": 1
+      }
+    },
+    "r5_c2": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r5_c2": 1,
+        "r4_c1": 1,
+        "r4_c3": 1,
+        "r6_c1": 1,
+        "r6_c3": 1,
+        "r3_c0": 1,
+        "r3_c4": 1,
+        "r7_c0": 1,
+        "r7_c4": 1,
+        "r2_c5": 1,
+        "r1_c6": 1,
+        "r0_c7": 1
+      }
+    },
+    "r5_c3": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r5_c3": 1,
+        "r4_c2": 1,
+        "r4_c4": 1,
+        "r6_c2": 1,
+        "r6_c4": 1,
+        "r3_c1": 1,
+        "r3_c5": 1,
+        "r7_c1": 1,
+        "r7_c5": 1,
+        "r2_c0": 1,
+        "r2_c6": 1,
+        "r1_c7": 1
+      }
+    },
+    "r5_c4": {
+      "state": {
+        "alive": 1,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r5_c4": 1,
+        "r4_c3": 1,
+        "r4_c5": 1,
+        "r6_c3": 1,
+        "r6_c5": 1,
+        "r3_c2": 1,
+        "r3_c6": 1,
+        "r7_c2": 1,
+        "r7_c6": 1,
+        "r2_c1": 1,
+        "r2_c7": 1,
+        "r1_c0": 1
+      }
+    },
+    "r5_c5": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r5_c5": 1,
+        "r4_c4": 1,
+        "r4_c6": 1,
+        "r6_c4": 1,
+        "r6_c6": 1,
+        "r3_c3": 1,
+        "r3_c7": 1,
+        "r7_c3": 1,
+        "r7_c7": 1,
+        "r2_c2": 1,
+        "r1_c1": 1,
+        "r0_c0": 1
+      }
+    },
+    "r5_c6": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r5_c6": 1,
+        "r4_c5": 1,
+        "r4_c7": 1,
+        "r6_c5": 1,
+        "r6_c7": 1,
+        "r3_c4": 1,
+        "r7_c4": 1,
+        "r2_c3": 1,
+        "r1_c2": 1,
+        "r0_c1": 1
+      }
+    },
+    "r5_c7": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r5_c7": 1,
+        "r4_c6": 1,
+        "r6_c6": 1,
+        "r3_c5": 1,
+        "r7_c5": 1,
+        "r2_c4": 1,
+        "r1_c3": 1,
+        "r0_c2": 1
+      }
+    },
+    "r6_c0": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r6_c0": 1,
+        "r5_c1": 1,
+        "r7_c1": 1,
+        "r4_c2": 1,
+        "r3_c3": 1,
+        "r2_c4": 1,
+        "r1_c5": 1,
+        "r0_c6": 1
+      }
+    },
+    "r6_c1": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r6_c1": 1,
+        "r5_c0": 1,
+        "r5_c2": 1,
+        "r7_c0": 1,
+        "r7_c2": 1,
+        "r4_c3": 1,
+        "r3_c4": 1,
+        "r2_c5": 1,
+        "r1_c6": 1,
+        "r0_c7": 1
+      }
+    },
+    "r6_c2": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r6_c2": 1,
+        "r5_c1": 1,
+        "r5_c3": 1,
+        "r7_c1": 1,
+        "r7_c3": 1,
+        "r4_c0": 1,
+        "r4_c4": 1,
+        "r3_c5": 1,
+        "r2_c6": 1,
+        "r1_c7": 1
+      }
+    },
+    "r6_c3": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r6_c3": 1,
+        "r5_c2": 1,
+        "r5_c4": 1,
+        "r7_c2": 1,
+        "r7_c4": 1,
+        "r4_c1": 1,
+        "r4_c5": 1,
+        "r3_c0": 1,
+        "r3_c6": 1,
+        "r2_c7": 1
+      }
+    },
+    "r6_c4": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r6_c4": 1,
+        "r5_c3": 1,
+        "r5_c5": 1,
+        "r7_c3": 1,
+        "r7_c5": 1,
+        "r4_c2": 1,
+        "r4_c6": 1,
+        "r3_c1": 1,
+        "r3_c7": 1,
+        "r2_c0": 1
+      }
+    },
+    "r6_c5": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r6_c5": 1,
+        "r5_c4": 1,
+        "r5_c6": 1,
+        "r7_c4": 1,
+        "r7_c6": 1,
+        "r4_c3": 1,
+        "r4_c7": 1,
+        "r3_c2": 1,
+        "r2_c1": 1,
+        "r1_c0": 1
+      }
+    },
+    "r6_c6": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r6_c6": 1,
+        "r5_c5": 1,
+        "r5_c7": 1,
+        "r7_c5": 1,
+        "r7_c7": 1,
+        "r4_c4": 1,
+        "r3_c3": 1,
+        "r2_c2": 1,
+        "r1_c1": 1,
+        "r0_c0": 1
+      }
+    },
+    "r6_c7": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r6_c7": 1,
+        "r5_c6": 1,
+        "r7_c6": 1,
+        "r4_c5": 1,
+        "r3_c4": 1,
+        "r2_c3": 1,
+        "r1_c2": 1,
+        "r0_c1": 1
+      }
+    },
+    "r7_c0": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r7_c0": 1,
+        "r6_c1": 1,
+        "r5_c2": 1,
+        "r4_c3": 1,
+        "r3_c4": 1,
+        "r2_c5": 1,
+        "r1_c6": 1,
+        "r0_c7": 1
+      }
+    },
+    "r7_c1": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r7_c1": 1,
+        "r6_c0": 1,
+        "r6_c2": 1,
+        "r5_c3": 1,
+        "r4_c4": 1,
+        "r3_c5": 1,
+        "r2_c6": 1,
+        "r1_c7": 1
+      }
+    },
+    "r7_c2": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r7_c2": 1,
+        "r6_c1": 1,
+        "r6_c3": 1,
+        "r5_c0": 1,
+        "r5_c4": 1,
+        "r4_c5": 1,
+        "r3_c6": 1,
+        "r2_c7": 1
+      }
+    },
+    "r7_c3": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r7_c3": 1,
+        "r6_c2": 1,
+        "r6_c4": 1,
+        "r5_c1": 1,
+        "r5_c5": 1,
+        "r4_c0": 1,
+        "r4_c6": 1,
+        "r3_c7": 1
+      }
+    },
+    "r7_c4": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r7_c4": 1,
+        "r6_c3": 1,
+        "r6_c5": 1,
+        "r5_c2": 1,
+        "r5_c6": 1,
+        "r4_c1": 1,
+        "r4_c7": 1,
+        "r3_c0": 1
+      }
+    },
+    "r7_c5": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r7_c5": 1,
+        "r6_c4": 1,
+        "r6_c6": 1,
+        "r5_c3": 1,
+        "r5_c7": 1,
+        "r4_c2": 1,
+        "r3_c1": 1,
+        "r2_c0": 1
+      }
+    },
+    "r7_c6": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r7_c6": 1,
+        "r6_c5": 1,
+        "r6_c7": 1,
+        "r5_c4": 1,
+        "r4_c3": 1,
+        "r3_c2": 1,
+        "r2_c1": 1,
+        "r1_c0": 1
+      }
+    },
+    "r7_c7": {
+      "state": {
+        "alive": 0,
+        "birthLow": 0.25,
+        "birthHigh": 0.625,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.625,
+        "birthGapLow": 0.5,
+        "birthGapHigh": 0.5,
+        "survivalGapLow": 0.5,
+        "survivalGapHigh": 0.5
+      },
+      "neighborhood": {
+        "r7_c7": 1,
+        "r6_c6": 1,
+        "r5_c5": 1,
+        "r4_c4": 1,
+        "r3_c3": 1,
+        "r2_c2": 1,
+        "r1_c1": 1,
+        "r0_c0": 1
+      }
+    }
+  },
+  "viewer": [
+    {
+      "colors": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "breaks": [
+        0,
+        0.5,
+        1
+      ],
+      "field": "alive"
+    }
+  ]
+}

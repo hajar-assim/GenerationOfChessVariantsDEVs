@@ -139,7 +139,7 @@ for rule_num, thresholds in RULES.items():
         rule_config_dir = os.path.join(config_dir, rule_subdir)
         os.makedirs(rule_config_dir, exist_ok=True)
         filepath = os.path.join(rule_config_dir, filename)
-        with open(filepath, "w") as f:
+        with open(filepath, "w", newline="\n") as f:
             json.dump(config, f, indent=2)
             f.write("\n")
 
@@ -156,7 +156,7 @@ echo "Running {config_name}..."
 ./bin/chess_variant config/rules/{rule_subdir}/{filename} 60
 """
         script_path = os.path.join(rule_script_dir, script_name)
-        with open(script_path, "w") as f:
+        with open(script_path, "w", newline="\n") as f:
             f.write(script_content)
         os.chmod(script_path, 0o755)
 
@@ -174,7 +174,7 @@ master_script += '    done\n'
 master_script += 'done\n'
 
 master_path = os.path.join(script_dir, "run_all_rules.sh")
-with open(master_path, "w") as f:
+with open(master_path, "w", newline="\n") as f:
     f.write(master_script)
 os.chmod(master_path, 0o755)
 

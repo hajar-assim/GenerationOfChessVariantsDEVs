@@ -1,5 +1,0 @@
-/Users/hajarassim/Documents/school/semesters/winter_2026/SYSC4906G/final_project/GenerationOfChessVariantsDEVs/build/CMakeFiles/edit_cache.dir
-/Users/hajarassim/Documents/school/semesters/winter_2026/SYSC4906G/final_project/GenerationOfChessVariantsDEVs/build/CMakeFiles/rebuild_cache.dir
-/Users/hajarassim/Documents/school/semesters/winter_2026/SYSC4906G/final_project/GenerationOfChessVariantsDEVs/build/main/CMakeFiles/chess_variant.dir
-/Users/hajarassim/Documents/school/semesters/winter_2026/SYSC4906G/final_project/GenerationOfChessVariantsDEVs/build/main/CMakeFiles/edit_cache.dir
-/Users/hajarassim/Documents/school/semesters/winter_2026/SYSC4906G/final_project/GenerationOfChessVariantsDEVs/build/main/CMakeFiles/rebuild_cache.dir
