@@ -275,6 +275,22 @@ The full analysis is in the report. Highlights:
 
 ---
 
+## Asymmetric Cell-DEVS — Implementation & Visualization Notes
+
+The asymmetric rule-zone model (`main/include/asymmChessVariantCell.hpp`) uses Cadmium's `AsymmCell<S,V>` formalism: cell IDs are strings (`"r3_c4"`) and each cell declares its own neighborhood as a `{neighborId: vicinity_weight}` map rather than inheriting from a grid shape. The transition logic is identical to the adaptive cell — what changes is that each cell's density thresholds are written directly into its JSON `state` block based on which zone it belongs to, so different regions of the board apply different Fridenfalk rules simultaneously.
+
+**Web-viewer compatibility via `scripts/asymm_to_viewer.py`.** The Cell-DEVS Web Viewer (https://devssim.carleton.ca/cell-devs-viewer/) only supports `GridCell` models — it requires `scenario.shape` and expects cell IDs in `(r,c)` form, neither of which asymm configs have. The translator script rewrites an asymm log so IDs match the grid format (`r3_c4` → `(3,4)`) and emits a minimal stub config that the viewer will accept. Stubs are written to `logs/viewer_stubs/`. Simulation behavior is unchanged — this is purely a visualization adapter.
+
+**Zone-colored visualization via `scripts/visualize_asymm.py`.** The web viewer shows only alive/dead in black/white, so the rule boundary is invisible no matter how many generations you scrub through. This script renders a matplotlib animation where each cell is tinted by its rule zone (Rule 1 light blue, Rule 3 yellow, Rule 5 purple, etc.) with alive cells overlaid as black dots. The boundary between zones is visible in every frame. Output is a `.gif` per scenario in `simulation_videos/`.
+
+Usage:
+```bash
+python3 scripts/asymm_to_viewer.py --all     # upload stubs to the web viewer
+python3 scripts/visualize_asymm.py --all     # zone-colored animations
+```
+
+---
+
 ## References
 
 Fridenfalk, M. (2013). *Application of Cellular Automata for Generation of Chess Variants.* Uppsala University, Department of Game Design.
