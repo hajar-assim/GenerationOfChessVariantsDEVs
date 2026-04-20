@@ -1,0 +1,50 @@
+{
+  "scenario": {
+    "shape": [
+      8,
+      8
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "wrapped": false
+  },
+  "cells": {
+    "default": {
+      "delay": "transport",
+      "model": "chessVariant",
+      "state": {
+        "alive": 0
+      },
+      "neighborhood": [
+        {
+          "type": "moore",
+          "range": 1
+        }
+      ]
+    }
+  },
+  "viewer": [
+    {
+      "colors": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "breaks": [
+        0,
+        0.5,
+        1
+      ],
+      "field": "alive"
+    }
+  ]
+}
