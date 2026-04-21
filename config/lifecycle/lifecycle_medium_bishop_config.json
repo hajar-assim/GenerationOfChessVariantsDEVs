@@ -1,0 +1,239 @@
+{
+  "scenario": {
+    "shape": [
+      8,
+      8
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "wrapped": false
+  },
+  "cells": {
+    "default": {
+      "delay": "transport",
+      "model": "lifecycleChessVariant",
+      "state": {
+        "activity": 0.0,
+        "phase": 0,
+        "stepsInPhase": 0,
+        "activationRate": 0.2,
+        "decayRate": 0.15,
+        "activeDuration": 8,
+        "birthLow": 0.25,
+        "birthHigh": 0.375,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.375
+      },
+      "neighborhood": [
+        {
+          "type": "relative",
+          "neighbors": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -2,
+              -2
+            ],
+            [
+              -2,
+              2
+            ],
+            [
+              2,
+              -2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              -3,
+              -3
+            ],
+            [
+              -3,
+              3
+            ],
+            [
+              3,
+              -3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -4,
+              4
+            ],
+            [
+              4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -5,
+              -5
+            ],
+            [
+              -5,
+              5
+            ],
+            [
+              5,
+              -5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              -6,
+              -6
+            ],
+            [
+              -6,
+              6
+            ],
+            [
+              6,
+              -6
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              -7,
+              -7
+            ],
+            [
+              -7,
+              7
+            ],
+            [
+              7,
+              -7
+            ],
+            [
+              7,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    "seeds": {
+      "state": {
+        "activity": 1.0,
+        "phase": 2,
+        "stepsInPhase": 0,
+        "activationRate": 0.2,
+        "decayRate": 0.15,
+        "activeDuration": 8,
+        "birthLow": 0.25,
+        "birthHigh": 0.375,
+        "survivalLow": 0.25,
+        "survivalHigh": 0.375
+      },
+      "cell_map": [
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ]
+    }
+  },
+  "viewer": [
+    {
+      "colors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          80,
+          80,
+          80
+        ],
+        [
+          160,
+          160,
+          160
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "breaks": [
+        0,
+        0.33,
+        0.66,
+        1.0
+      ],
+      "field": "activity"
+    }
+  ]
+}

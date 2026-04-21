@@ -16,6 +16,8 @@
 #include "include/chessVariantCell.hpp"
 #include "include/adaptiveChessVariantCell.hpp"
 #include "include/asymmChessVariantCell.hpp"
+#include "include/boardControlCell.hpp"
+#include "include/lifecycleChessVariantCell.hpp"
 
 using namespace cadmium::celldevs;
 using namespace cadmium;
@@ -56,6 +58,30 @@ std::shared_ptr<AsymmCell<AdaptiveChessVariantState, double>> addAsymmChessVaria
     }
 }
 
+// factory for board control influence analysis cells
+std::shared_ptr<GridCell<BoardControlState, double>> addBoardControlCell(
+    const coordinates& cellId,
+    const std::shared_ptr<const GridCellConfig<BoardControlState, double>>& cellConfig) {
+    auto cellModel = cellConfig->cellModel;
+    if (cellModel == "boardControl") {
+        return std::make_shared<BoardControlCell>(cellId, cellConfig);
+    } else {
+        throw std::bad_typeid();
+    }
+}
+
+// factory for lifecycle continuous-activity cells
+std::shared_ptr<GridCell<LifecycleChessVariantState, double>> addLifecycleGridCell(
+    const coordinates& cellId,
+    const std::shared_ptr<const GridCellConfig<LifecycleChessVariantState, double>>& cellConfig) {
+    auto cellModel = cellConfig->cellModel;
+    if (cellModel == "lifecycleChessVariant") {
+        return std::make_shared<LifecycleChessVariantCell>(cellId, cellConfig);
+    } else {
+        throw std::bad_typeid();
+    }
+}
+
 // detect which model type the config uses by reading the default cell model field
 std::string detectModelType(const std::string& configFilePath) {
     std::ifstream f(configFilePath);
@@ -85,7 +111,31 @@ int main(int argc, char** argv) {
     std::string modelType = detectModelType(configFilePath);
     std::cout << "Detected model type: " << modelType << std::endl;
 
-    if (modelType == "asymmChessVariant") {
+    if (modelType == "lifecycleChessVariant") {
+        // lifecycle continuous-activity model
+        auto model = std::make_shared<GridCellDEVSCoupled<LifecycleChessVariantState, double>>(
+            "lifecycleChessVariant", addLifecycleGridCell, configFilePath);
+        model->buildModel();
+
+        auto rootCoordinator = RootCoordinator(model);
+        rootCoordinator.setLogger<CSVLogger>(logFile, ";");
+
+        rootCoordinator.start();
+        rootCoordinator.simulate(simTime);
+        rootCoordinator.stop();
+    } else if (modelType == "boardControl") {
+        // board control influence analysis model
+        auto model = std::make_shared<GridCellDEVSCoupled<BoardControlState, double>>(
+            "boardControl", addBoardControlCell, configFilePath);
+        model->buildModel();
+
+        auto rootCoordinator = RootCoordinator(model);
+        rootCoordinator.setLogger<CSVLogger>(logFile, ";");
+
+        rootCoordinator.start();
+        rootCoordinator.simulate(simTime);
+        rootCoordinator.stop();
+    } else if (modelType == "asymmChessVariant") {
         // asymmetric rule-zone model - per-cell rule parameterization
         auto model = std::make_shared<AsymmCellDEVSCoupled<AdaptiveChessVariantState, double>>(
             "asymmChessVariant", addAsymmChessVariantCell, configFilePath);
