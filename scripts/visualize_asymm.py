@@ -176,7 +176,7 @@ def main():
     args = p.parse_args()
 
     if args.all:
-        logs = sorted(glob.glob("logs/asymm_*_grid_log.csv"))
+        logs = sorted(glob.glob("logs/**/asymm_*_grid_log.csv", recursive=True))
         if not logs:
             print("No asymm logs found in logs/", file=sys.stderr)
             sys.exit(1)

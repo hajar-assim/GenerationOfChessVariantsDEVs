@@ -23,16 +23,21 @@ NONE, WHITE, BLACK = 0, 1, 2
 
 # viewer config: blue-white-red gradient for control balance
 # positive control = white dominance (blue), negative = black dominance (red)
+# finer middle bands reveal the sub-unit diffusion drift on empty squares;
+# without them every empty cell lands in one of two colors and the animation
+# looks frozen after t=1
 VIEWER = [
     {
         "colors": [
-            [220, 38, 38],    # strong black control (red)
+            [150, 0, 0],      # piece-level black control (dark red)
+            [220, 38, 38],    # strong black
             [235, 147, 147],  # moderate black
             [255, 255, 255],  # neutral / contested
             [147, 175, 235],  # moderate white
-            [37, 99, 235]     # strong white control (blue)
+            [37, 99, 235],    # strong white
+            [0, 0, 150]       # piece-level white control (dark blue)
         ],
-        "breaks": [-10, -2, 0, 2, 10],
+        "breaks": [-10, -2, -0.5, 0, 0.5, 2, 10],
         "field": "control"
     }
 ]

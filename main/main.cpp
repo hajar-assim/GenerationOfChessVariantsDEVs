@@ -18,6 +18,7 @@
 #include "include/asymmChessVariantCell.hpp"
 #include "include/boardControlCell.hpp"
 #include "include/lifecycleChessVariantCell.hpp"
+#include "include/chessInfectionCell.hpp"
 
 using namespace cadmium::celldevs;
 using namespace cadmium;
@@ -82,6 +83,18 @@ std::shared_ptr<GridCell<LifecycleChessVariantState, double>> addLifecycleGridCe
     }
 }
 
+// factory for chess infection propagation cells
+std::shared_ptr<GridCell<ChessInfectionState, double>> addChessInfectionCell(
+    const coordinates& cellId,
+    const std::shared_ptr<const GridCellConfig<ChessInfectionState, double>>& cellConfig) {
+    auto cellModel = cellConfig->cellModel;
+    if (cellModel == "chessInfection") {
+        return std::make_shared<ChessInfectionCell>(cellId, cellConfig);
+    } else {
+        throw std::bad_typeid();
+    }
+}
+
 // detect which model type the config uses by reading the default cell model field
 std::string detectModelType(const std::string& configFilePath) {
     std::ifstream f(configFilePath);
@@ -99,19 +112,42 @@ int main(int argc, char** argv) {
     std::string configFilePath = argv[1];
     double simTime = (argc > 2) ? std::stod(argv[2]) : 500;
 
-    // output goes to logs/<config_name>_grid_log.csv
-    std::filesystem::create_directories("logs");
-    std::string configName = std::filesystem::path(configFilePath).stem().string();
+    // log output mirrors the config directory structure:
+    //   config/baseline/foo.json      -> logs/baseline/foo_grid_log.csv
+    //   config/rules/rule1/foo.json   -> logs/rules/rule1/foo_grid_log.csv
+    std::filesystem::path configPath(configFilePath);
+    std::string configName = configPath.stem().string();
     std::string baseName = configName;
     if (baseName.size() > 7 && baseName.substr(baseName.size() - 7) == "_config") {
         baseName = baseName.substr(0, baseName.size() - 7);
     }
-    std::string logFile = "logs/" + baseName + "_grid_log.csv";
+    std::string parentStr = configPath.parent_path().generic_string();
+    std::string subdir;
+    const std::string marker = "config/";
+    auto pos = parentStr.find(marker);
+    if (pos != std::string::npos) {
+        subdir = parentStr.substr(pos + marker.size());
+    }
+    std::string logDir = subdir.empty() ? "logs" : ("logs/" + subdir);
+    std::filesystem::create_directories(logDir);
+    std::string logFile = logDir + "/" + baseName + "_grid_log.csv";
 
     std::string modelType = detectModelType(configFilePath);
     std::cout << "Detected model type: " << modelType << std::endl;
 
-    if (modelType == "lifecycleChessVariant") {
+    if (modelType == "chessInfection") {
+        // chess infection SIR propagation model
+        auto model = std::make_shared<GridCellDEVSCoupled<ChessInfectionState, double>>(
+            "chessInfection", addChessInfectionCell, configFilePath);
+        model->buildModel();
+
+        auto rootCoordinator = RootCoordinator(model);
+        rootCoordinator.setLogger<CSVLogger>(logFile, ";");
+
+        rootCoordinator.start();
+        rootCoordinator.simulate(simTime);
+        rootCoordinator.stop();
+    } else if (modelType == "lifecycleChessVariant") {
         // lifecycle continuous-activity model
         auto model = std::make_shared<GridCellDEVSCoupled<LifecycleChessVariantState, double>>(
             "lifecycleChessVariant", addLifecycleGridCell, configFilePath);
