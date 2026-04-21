@@ -89,6 +89,7 @@ def build_config(piece_name, prop_params, seed_cells):
         "activity": 0.0,
         "phase": 0,
         "stepsInPhase": 0,
+        "step": 0,
         **prop_params,
     }
 
@@ -97,6 +98,7 @@ def build_config(piece_name, prop_params, seed_cells):
         "activity": 1.0,
         "phase": 1,
         "stepsInPhase": 0,
+        "step": 0,
         **prop_params,
     }
 

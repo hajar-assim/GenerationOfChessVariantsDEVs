@@ -18,6 +18,7 @@
         "activity": 0.0,
         "phase": 0,
         "stepsInPhase": 0,
+        "step": 0,
         "activeDuration": 6,
         "decayRate": 0.15,
         "spreadThreshold": 0.05
@@ -263,6 +264,7 @@
         "activity": 1.0,
         "phase": 1,
         "stepsInPhase": 0,
+        "step": 0,
         "activeDuration": 6,
         "decayRate": 0.15,
         "spreadThreshold": 0.05

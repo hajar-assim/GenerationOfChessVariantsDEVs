@@ -26,6 +26,11 @@ public:
             NeighborData<PropagationChessVariantState, double>
         >& neighborhood) const override {
 
+        // increment step counter to keep all cells active in the simulation.
+        // without this, neutral cells go passive and never check for new
+        // active neighbors, so the wavefront never spreads.
+        state.step++;
+
         switch (state.phase) {
             case 0: { // neutral — check if neighbors trigger activation
                 int activeNeighbors = 0;

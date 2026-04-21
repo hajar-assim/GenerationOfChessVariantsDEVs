@@ -45,6 +45,7 @@ struct PropagationChessVariantState {
     double activity;        // 0.0 to 1.0 continuous value
     int phase;              // 0=neutral, 1=active, 2=exhausted
     int stepsInPhase;       // steps spent in current phase
+    int step;               // global step counter (keeps cells active in simulation)
 
     // propagation parameters
     int activeDuration;     // steps to stay active before exhaustion
@@ -52,14 +53,17 @@ struct PropagationChessVariantState {
     double spreadThreshold; // min fraction of active neighbors to trigger activation
 
     PropagationChessVariantState()
-        : activity(0.0), phase(0), stepsInPhase(0),
+        : activity(0.0), phase(0), stepsInPhase(0), step(0),
           activeDuration(4), decayRate(0.2), spreadThreshold(0.05) {}
 };
 
-// state changes when phase, steps, or activity changes
+// state changes when phase, steps, activity, or step counter changes.
+// the step counter ensures all cells stay active in the simulation so
+// neutral cells keep checking whether a neighbor has become active.
 inline bool operator!=(const PropagationChessVariantState& a,
                         const PropagationChessVariantState& b) {
     return a.phase != b.phase ||
+           a.step != b.step ||
            a.stepsInPhase != b.stepsInPhase ||
            std::abs(a.activity - b.activity) > 0.001;
 }
@@ -78,6 +82,7 @@ inline void from_json(const nlohmann::json& j, PropagationChessVariantState& s) 
     if (j.contains("activeDuration"))  j.at("activeDuration").get_to(s.activeDuration);
     if (j.contains("decayRate"))       j.at("decayRate").get_to(s.decayRate);
     if (j.contains("spreadThreshold")) j.at("spreadThreshold").get_to(s.spreadThreshold);
+    if (j.contains("step"))            j.at("step").get_to(s.step);
 }
 
 #endif // PROPAGATION_CHESS_VARIANT_STATE_HPP
