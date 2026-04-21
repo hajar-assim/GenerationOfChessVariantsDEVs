@@ -18,6 +18,8 @@
 #include "include/asymmChessVariantCell.hpp"
 #include "include/boardControlCell.hpp"
 #include "include/lifecycleChessVariantCell.hpp"
+#include "include/losChessVariantCell.hpp"
+#include "include/propagationChessVariantCell.hpp"
 
 using namespace cadmium::celldevs;
 using namespace cadmium;
@@ -82,6 +84,30 @@ std::shared_ptr<GridCell<LifecycleChessVariantState, double>> addLifecycleGridCe
     }
 }
 
+// factory for propagation influence cells
+std::shared_ptr<GridCell<PropagationChessVariantState, double>> addPropagationGridCell(
+    const coordinates& cellId,
+    const std::shared_ptr<const GridCellConfig<PropagationChessVariantState, double>>& cellConfig) {
+    auto cellModel = cellConfig->cellModel;
+    if (cellModel == "propagationChessVariant") {
+        return std::make_shared<PropagationChessVariantCell>(cellId, cellConfig);
+    } else {
+        throw std::bad_typeid();
+    }
+}
+
+// factory for line-of-sight blocking cells
+std::shared_ptr<GridCell<AdaptiveChessVariantState, double>> addLOSGridCell(
+    const coordinates& cellId,
+    const std::shared_ptr<const GridCellConfig<AdaptiveChessVariantState, double>>& cellConfig) {
+    auto cellModel = cellConfig->cellModel;
+    if (cellModel == "losChessVariant") {
+        return std::make_shared<LOSChessVariantCell>(cellId, cellConfig);
+    } else {
+        throw std::bad_typeid();
+    }
+}
+
 // detect which model type the config uses by reading the default cell model field
 std::string detectModelType(const std::string& configFilePath) {
     std::ifstream f(configFilePath);
@@ -99,22 +125,56 @@ int main(int argc, char** argv) {
     std::string configFilePath = argv[1];
     double simTime = (argc > 2) ? std::stod(argv[2]) : 500;
 
-    // output goes to logs/<config_name>_grid_log.csv
-    std::filesystem::create_directories("logs");
-    std::string configName = std::filesystem::path(configFilePath).stem().string();
+    // output goes to logs/<subdir>/<config_name>_grid_log.csv
+    // mirrors the config directory structure (e.g. config/los/ -> logs/los/)
+    std::filesystem::path configPath(configFilePath);
+    std::string configName = configPath.stem().string();
     std::string baseName = configName;
     if (baseName.size() > 7 && baseName.substr(baseName.size() - 7) == "_config") {
         baseName = baseName.substr(0, baseName.size() - 7);
     }
-    std::string logFile = "logs/" + baseName + "_grid_log.csv";
+
+    // extract subdirectory from config path (e.g. "config/los/file.json" -> "los")
+    std::string logSubdir = "";
+    auto parentDir = configPath.parent_path().filename().string();
+    if (parentDir != "config" && parentDir != "." && parentDir != "") {
+        logSubdir = parentDir + "/";
+    }
+    std::string logDir = "logs/" + logSubdir;
+    std::filesystem::create_directories(logDir);
+    std::string logFile = logDir + baseName + "_grid_log.csv";
 
     std::string modelType = detectModelType(configFilePath);
     std::cout << "Detected model type: " << modelType << std::endl;
 
-    if (modelType == "lifecycleChessVariant") {
+    if (modelType == "propagationChessVariant") {
+        // propagation influence model
+        auto model = std::make_shared<GridCellDEVSCoupled<PropagationChessVariantState, double>>(
+            "propagationChessVariant", addPropagationGridCell, configFilePath);
+        model->buildModel();
+
+        auto rootCoordinator = RootCoordinator(model);
+        rootCoordinator.setLogger<CSVLogger>(logFile, ";");
+
+        rootCoordinator.start();
+        rootCoordinator.simulate(simTime);
+        rootCoordinator.stop();
+    } else if (modelType == "lifecycleChessVariant") {
         // lifecycle continuous-activity model
         auto model = std::make_shared<GridCellDEVSCoupled<LifecycleChessVariantState, double>>(
             "lifecycleChessVariant", addLifecycleGridCell, configFilePath);
+        model->buildModel();
+
+        auto rootCoordinator = RootCoordinator(model);
+        rootCoordinator.setLogger<CSVLogger>(logFile, ";");
+
+        rootCoordinator.start();
+        rootCoordinator.simulate(simTime);
+        rootCoordinator.stop();
+    } else if (modelType == "losChessVariant") {
+        // line-of-sight blocking model (uses same state as adaptive)
+        auto model = std::make_shared<GridCellDEVSCoupled<AdaptiveChessVariantState, double>>(
+            "losChessVariant", addLOSGridCell, configFilePath);
         model->buildModel();
 
         auto rootCoordinator = RootCoordinator(model);
