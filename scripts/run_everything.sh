@@ -3,11 +3,12 @@
 # Usage (from repo root): bash scripts/run_everything.sh
 #
 # Output:
-#   logs/*_grid_log.csv          — one per scenario (56 total)
+#   logs/**/*_grid_log.csv          — one per scenario (56 total)
 #   logs/metrics_summary.csv     — coverage/symmetry/connectivity/holes per log
 #   logs/run_everything.log      — stdout/stderr from all simulator runs
 
 set -u
+shopt -s globstar  # enable logs/**/*.csv recursive glob
 cd "$(dirname "$0")/.."
 
 if [ ! -x bin/chess_variant ]; then
@@ -16,13 +17,16 @@ if [ ! -x bin/chess_variant ]; then
 fi
 
 mkdir -p logs
-rm -f logs/*_grid_log.csv logs/metrics_summary.csv logs/run_everything.log
+rm -f logs/**/*_grid_log.csv logs/metrics_summary.csv logs/run_everything.log
 
 BATCHES=(
     "scripts/baseline/run_all_scenarios.sh"
     "scripts/adaptive/run_all_adaptive_scenarios.sh"
     "scripts/rules/run_all_rules.sh"
     "scripts/asymmetric/run_all_asymm.sh"
+    "scripts/lifecycle/run_all_lifecycle.sh"
+    "scripts/board_control/run_all_board_control.sh"
+    "scripts/los/run_all_los.sh"
 )
 
 echo "=== Running all scenario batches ==="
@@ -36,7 +40,13 @@ echo ""
 echo "=== Collecting metrics ==="
 {
     echo "scenario,coverage,symmetry,connectivity,holes"
-    for log in logs/*_grid_log.csv; do
+    for log in logs/**/*_grid_log.csv; do
+        # board_control uses a multi-field state (piece + influence heatmap),
+        # not binary alive/dead — the accumulation-grid metrics don't apply.
+        case "$log" in
+            *board_control*) continue ;;
+            */viewer_stubs/*) continue ;;
+        esac
         name=$(basename "$log" _grid_log.csv)
         out=$(python3 scripts/board_metrics.py --from-log "$log" 2>/dev/null) || {
             echo "$name,ERROR,ERROR,ERROR,ERROR"
@@ -52,6 +62,6 @@ echo "=== Collecting metrics ==="
 
 echo ""
 echo "=== Done ==="
-echo "Logs:     logs/*_grid_log.csv ($(ls logs/*_grid_log.csv 2>/dev/null | wc -l) files)"
+echo "Logs:     logs/**/*_grid_log.csv ($(ls logs/**/*_grid_log.csv 2>/dev/null | wc -l) files)"
 echo "Metrics:  logs/metrics_summary.csv"
 echo "Run log:  logs/run_everything.log"

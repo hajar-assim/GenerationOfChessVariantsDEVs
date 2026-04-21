@@ -19,7 +19,6 @@
 #include "include/boardControlCell.hpp"
 #include "include/lifecycleChessVariantCell.hpp"
 #include "include/losChessVariantCell.hpp"
-#include "include/propagationChessVariantCell.hpp"
 
 using namespace cadmium::celldevs;
 using namespace cadmium;
@@ -84,18 +83,6 @@ std::shared_ptr<GridCell<LifecycleChessVariantState, double>> addLifecycleGridCe
     }
 }
 
-// factory for propagation influence cells
-std::shared_ptr<GridCell<PropagationChessVariantState, double>> addPropagationGridCell(
-    const coordinates& cellId,
-    const std::shared_ptr<const GridCellConfig<PropagationChessVariantState, double>>& cellConfig) {
-    auto cellModel = cellConfig->cellModel;
-    if (cellModel == "propagationChessVariant") {
-        return std::make_shared<PropagationChessVariantCell>(cellId, cellConfig);
-    } else {
-        throw std::bad_typeid();
-    }
-}
-
 // factory for line-of-sight blocking cells
 std::shared_ptr<GridCell<AdaptiveChessVariantState, double>> addLOSGridCell(
     const coordinates& cellId,
@@ -147,19 +134,7 @@ int main(int argc, char** argv) {
     std::string modelType = detectModelType(configFilePath);
     std::cout << "Detected model type: " << modelType << std::endl;
 
-    if (modelType == "propagationChessVariant") {
-        // propagation influence model
-        auto model = std::make_shared<GridCellDEVSCoupled<PropagationChessVariantState, double>>(
-            "propagationChessVariant", addPropagationGridCell, configFilePath);
-        model->buildModel();
-
-        auto rootCoordinator = RootCoordinator(model);
-        rootCoordinator.setLogger<CSVLogger>(logFile, ";");
-
-        rootCoordinator.start();
-        rootCoordinator.simulate(simTime);
-        rootCoordinator.stop();
-    } else if (modelType == "lifecycleChessVariant") {
+    if (modelType == "lifecycleChessVariant") {
         // lifecycle continuous-activity model
         auto model = std::make_shared<GridCellDEVSCoupled<LifecycleChessVariantState, double>>(
             "lifecycleChessVariant", addLifecycleGridCell, configFilePath);

@@ -66,8 +66,15 @@ def parse_log(filepath):
                 continue
             r, c = rc
 
-            # parse alive value from data like "<1>" or "<0>"
-            alive = int(data.strip().strip("<>"))
+            # parse alive value from data like "<1>", "<0>", or "<0.35>" (lifecycle).
+            # lifecycle emits continuous activity in [0.0, 1.0]; threshold at 0.5
+            # so the accumulation-grid logic still works on non-binary models.
+            raw = data.strip().strip("<>").split(",")[0]
+            try:
+                val = float(raw)
+            except ValueError:
+                continue  # multi-field state (e.g. board_control) — not alive/dead
+            alive = 1 if val >= 0.5 else 0
 
             time_val = int(time_str)
             if time_val not in grid_states:

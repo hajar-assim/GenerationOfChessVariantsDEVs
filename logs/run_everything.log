@@ -4,72 +4,72 @@
 
 --- Running: chessVariantKernel1_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/chessVariantKernel1_grid_log.csv
+Simulation complete. Output: logs/baseline/chessVariantKernel1_grid_log.csv
 --- Finished: chessVariantKernel1_config ---
 
 --- Running: chessVariantKernel2_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/chessVariantKernel2_grid_log.csv
+Simulation complete. Output: logs/baseline/chessVariantKernel2_grid_log.csv
 --- Finished: chessVariantKernel2_config ---
 
 --- Running: chessVariantKernel1SmallGrid_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/chessVariantKernel1SmallGrid_grid_log.csv
+Simulation complete. Output: logs/baseline/chessVariantKernel1SmallGrid_grid_log.csv
 --- Finished: chessVariantKernel1SmallGrid_config ---
 
 --- Running: chessVariantKernel2SmallGrid_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/chessVariantKernel2SmallGrid_grid_log.csv
+Simulation complete. Output: logs/baseline/chessVariantKernel2SmallGrid_grid_log.csv
 --- Finished: chessVariantKernel2SmallGrid_config ---
 
 --- Running: chessVariantKernel1_glider_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/chessVariantKernel1_glider_grid_log.csv
+Simulation complete. Output: logs/baseline/chessVariantKernel1_glider_grid_log.csv
 --- Finished: chessVariantKernel1_glider_config ---
 
 --- Running: chessVariantKernel1_line_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/chessVariantKernel1_line_grid_log.csv
+Simulation complete. Output: logs/baseline/chessVariantKernel1_line_grid_log.csv
 --- Finished: chessVariantKernel1_line_config ---
 
 --- Running: chessVariantKernel1_noWrap_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/chessVariantKernel1_noWrap_grid_log.csv
+Simulation complete. Output: logs/baseline/chessVariantKernel1_noWrap_grid_log.csv
 --- Finished: chessVariantKernel1_noWrap_config ---
 
 --- Running: chessVariantKernel1_large_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/chessVariantKernel1_large_grid_log.csv
+Simulation complete. Output: logs/baseline/chessVariantKernel1_large_grid_log.csv
 --- Finished: chessVariantKernel1_large_config ---
 
 --- Running: knightNeighborhood_8x8_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/knightNeighborhood_8x8_grid_log.csv
+Simulation complete. Output: logs/baseline/knightNeighborhood_8x8_grid_log.csv
 --- Finished: knightNeighborhood_8x8_config ---
 
 --- Running: bishopNeighborhood_8x8_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/bishopNeighborhood_8x8_grid_log.csv
+Simulation complete. Output: logs/baseline/bishopNeighborhood_8x8_grid_log.csv
 --- Finished: bishopNeighborhood_8x8_config ---
 
 --- Running: rookNeighborhood_8x8_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/rookNeighborhood_8x8_grid_log.csv
+Simulation complete. Output: logs/baseline/rookNeighborhood_8x8_grid_log.csv
 --- Finished: rookNeighborhood_8x8_config ---
 
 --- Running: knightNeighborhood_9x13_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/knightNeighborhood_9x13_grid_log.csv
+Simulation complete. Output: logs/baseline/knightNeighborhood_9x13_grid_log.csv
 --- Finished: knightNeighborhood_9x13_config ---
 
 --- Running: bishopNeighborhood_9x13_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/bishopNeighborhood_9x13_grid_log.csv
+Simulation complete. Output: logs/baseline/bishopNeighborhood_9x13_grid_log.csv
 --- Finished: bishopNeighborhood_9x13_config ---
 
 --- Running: multiPiece_8x8_config (sim time = 60) ---
 Detected model type: chessVariant
-Simulation complete. Output: logs/multiPiece_8x8_grid_log.csv
+Simulation complete. Output: logs/baseline/multiPiece_8x8_grid_log.csv
 --- Finished: multiPiece_8x8_config ---
 
 ============================================
@@ -79,133 +79,220 @@ Simulation complete. Output: logs/multiPiece_8x8_grid_log.csv
 
 [1/5] Adaptive Moore 9x13 (validation)...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/adaptiveMoore_9x13_grid_log.csv
+Simulation complete. Output: logs/adaptive/adaptiveMoore_9x13_grid_log.csv
 
 [2/5] Adaptive Bishop 8x8...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/adaptiveBishop_8x8_grid_log.csv
+Simulation complete. Output: logs/adaptive/adaptiveBishop_8x8_grid_log.csv
 
 [3/5] Adaptive Rook 8x8...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/adaptiveRook_8x8_grid_log.csv
+Simulation complete. Output: logs/adaptive/adaptiveRook_8x8_grid_log.csv
 
 [4/5] Adaptive Queen 8x8...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/adaptiveQueen_8x8_grid_log.csv
+Simulation complete. Output: logs/adaptive/adaptiveQueen_8x8_grid_log.csv
 
 [5/5] Adaptive Queen 9x13...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/adaptiveQueen_9x13_grid_log.csv
+Simulation complete. Output: logs/adaptive/adaptiveQueen_9x13_grid_log.csv
 
 ===== All Adaptive Scenarios Complete =====
 Running rule1_bishop...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule1_bishop_grid_log.csv
+Simulation complete. Output: logs/rule1/rule1_bishop_grid_log.csv
 Running rule1_knight...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule1_knight_grid_log.csv
+Simulation complete. Output: logs/rule1/rule1_knight_grid_log.csv
 Running rule1_moore...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule1_moore_grid_log.csv
+Simulation complete. Output: logs/rule1/rule1_moore_grid_log.csv
 Running rule1_queen...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule1_queen_grid_log.csv
+Simulation complete. Output: logs/rule1/rule1_queen_grid_log.csv
 Running rule1_rook...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule1_rook_grid_log.csv
+Simulation complete. Output: logs/rule1/rule1_rook_grid_log.csv
 Running rule2_bishop...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule2_bishop_grid_log.csv
+Simulation complete. Output: logs/rule2/rule2_bishop_grid_log.csv
 Running rule2_knight...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule2_knight_grid_log.csv
+Simulation complete. Output: logs/rule2/rule2_knight_grid_log.csv
 Running rule2_moore...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule2_moore_grid_log.csv
+Simulation complete. Output: logs/rule2/rule2_moore_grid_log.csv
 Running rule2_queen...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule2_queen_grid_log.csv
+Simulation complete. Output: logs/rule2/rule2_queen_grid_log.csv
 Running rule2_rook...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule2_rook_grid_log.csv
+Simulation complete. Output: logs/rule2/rule2_rook_grid_log.csv
 Running rule3_bishop...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule3_bishop_grid_log.csv
+Simulation complete. Output: logs/rule3/rule3_bishop_grid_log.csv
 Running rule3_knight...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule3_knight_grid_log.csv
+Simulation complete. Output: logs/rule3/rule3_knight_grid_log.csv
 Running rule3_moore...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule3_moore_grid_log.csv
+Simulation complete. Output: logs/rule3/rule3_moore_grid_log.csv
 Running rule3_queen...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule3_queen_grid_log.csv
+Simulation complete. Output: logs/rule3/rule3_queen_grid_log.csv
 Running rule3_rook...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule3_rook_grid_log.csv
+Simulation complete. Output: logs/rule3/rule3_rook_grid_log.csv
 Running rule4_bishop...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule4_bishop_grid_log.csv
+Simulation complete. Output: logs/rule4/rule4_bishop_grid_log.csv
 Running rule4_knight...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule4_knight_grid_log.csv
+Simulation complete. Output: logs/rule4/rule4_knight_grid_log.csv
 Running rule4_moore...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule4_moore_grid_log.csv
+Simulation complete. Output: logs/rule4/rule4_moore_grid_log.csv
 Running rule4_queen...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule4_queen_grid_log.csv
+Simulation complete. Output: logs/rule4/rule4_queen_grid_log.csv
 Running rule4_rook...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule4_rook_grid_log.csv
+Simulation complete. Output: logs/rule4/rule4_rook_grid_log.csv
 Running rule5_bishop...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule5_bishop_grid_log.csv
+Simulation complete. Output: logs/rule5/rule5_bishop_grid_log.csv
 Running rule5_knight...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule5_knight_grid_log.csv
+Simulation complete. Output: logs/rule5/rule5_knight_grid_log.csv
 Running rule5_moore...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule5_moore_grid_log.csv
+Simulation complete. Output: logs/rule5/rule5_moore_grid_log.csv
 Running rule5_queen...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule5_queen_grid_log.csv
+Simulation complete. Output: logs/rule5/rule5_queen_grid_log.csv
 Running rule5_rook...
 Detected model type: adaptiveChessVariant
-Simulation complete. Output: logs/rule5_rook_grid_log.csv
+Simulation complete. Output: logs/rule5/rule5_rook_grid_log.csv
 Running asymm_r1_r2_r3_r4_bishop...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r1_r2_r3_r4_bishop_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r1_r2_r3_r4_bishop_grid_log.csv
 Running asymm_r1_r2_r3_r4_knight...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r1_r2_r3_r4_knight_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r1_r2_r3_r4_knight_grid_log.csv
 Running asymm_r1_r2_r3_r4_queen...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r1_r2_r3_r4_queen_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r1_r2_r3_r4_queen_grid_log.csv
 Running asymm_r1_r2_r3_r4_rook...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r1_r2_r3_r4_rook_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r1_r2_r3_r4_rook_grid_log.csv
 Running asymm_r1_r3_bishop...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r1_r3_bishop_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r1_r3_bishop_grid_log.csv
 Running asymm_r1_r3_knight...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r1_r3_knight_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r1_r3_knight_grid_log.csv
 Running asymm_r1_r3_queen...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r1_r3_queen_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r1_r3_queen_grid_log.csv
 Running asymm_r1_r3_rook...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r1_r3_rook_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r1_r3_rook_grid_log.csv
 Running asymm_r3_r5_bishop...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r3_r5_bishop_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r3_r5_bishop_grid_log.csv
 Running asymm_r3_r5_knight...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r3_r5_knight_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r3_r5_knight_grid_log.csv
 Running asymm_r3_r5_queen...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r3_r5_queen_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r3_r5_queen_grid_log.csv
 Running asymm_r3_r5_rook...
 Detected model type: asymmChessVariant
-Simulation complete. Output: logs/asymm_r3_r5_rook_grid_log.csv
+Simulation complete. Output: logs/asymmetric/asymm_r3_r5_rook_grid_log.csv
+Running lifecycle_fast_bishop...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_fast_bishop_grid_log.csv
+Running lifecycle_fast_knight...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_fast_knight_grid_log.csv
+Running lifecycle_fast_moore...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_fast_moore_grid_log.csv
+Running lifecycle_fast_queen...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_fast_queen_grid_log.csv
+Running lifecycle_fast_rook...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_fast_rook_grid_log.csv
+Running lifecycle_medium_bishop...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_medium_bishop_grid_log.csv
+Running lifecycle_medium_knight...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_medium_knight_grid_log.csv
+Running lifecycle_medium_moore...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_medium_moore_grid_log.csv
+Running lifecycle_medium_queen...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_medium_queen_grid_log.csv
+Running lifecycle_medium_rook...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_medium_rook_grid_log.csv
+Running lifecycle_slow_bishop...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_slow_bishop_grid_log.csv
+Running lifecycle_slow_knight...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_slow_knight_grid_log.csv
+Running lifecycle_slow_moore...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_slow_moore_grid_log.csv
+Running lifecycle_slow_queen...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_slow_queen_grid_log.csv
+Running lifecycle_slow_rook...
+Detected model type: lifecycleChessVariant
+Simulation complete. Output: logs/lifecycle/lifecycle_slow_rook_grid_log.csv
+Running board_control_endgame_rook_vs_bishop...
+Detected model type: boardControl
+Simulation complete. Output: logs/board_control/board_control_endgame_rook_vs_bishop_grid_log.csv
+Running board_control_italian_game...
+Detected model type: boardControl
+Simulation complete. Output: logs/board_control/board_control_italian_game_grid_log.csv
+Running board_control_queens_gambit_declined...
+Detected model type: boardControl
+Simulation complete. Output: logs/board_control/board_control_queens_gambit_declined_grid_log.csv
+Running board_control_sicilian_najdorf...
+Detected model type: boardControl
+Simulation complete. Output: logs/board_control/board_control_sicilian_najdorf_grid_log.csv
+Running board_control_starting_position...
+Detected model type: boardControl
+Simulation complete. Output: logs/board_control/board_control_starting_position_grid_log.csv
+Running los_rule1_bishop...
+Detected model type: losChessVariant
+Simulation complete. Output: logs/los/los_rule1_bishop_grid_log.csv
+Running los_rule1_queen...
+Detected model type: losChessVariant
+Simulation complete. Output: logs/los/los_rule1_queen_grid_log.csv
+Running los_rule1_rook...
+Detected model type: losChessVariant
+Simulation complete. Output: logs/los/los_rule1_rook_grid_log.csv
+Running los_rule2_bishop...
+Detected model type: losChessVariant
+Simulation complete. Output: logs/los/los_rule2_bishop_grid_log.csv
+Running los_rule2_queen...
+Detected model type: losChessVariant
+Simulation complete. Output: logs/los/los_rule2_queen_grid_log.csv
+Running los_rule2_rook...
+Detected model type: losChessVariant
+Simulation complete. Output: logs/los/los_rule2_rook_grid_log.csv
+Running los_rule3_bishop...
+Detected model type: losChessVariant
+Simulation complete. Output: logs/los/los_rule3_bishop_grid_log.csv
+Running los_rule3_queen...
+Detected model type: losChessVariant
+Simulation complete. Output: logs/los/los_rule3_queen_grid_log.csv
+Running los_rule3_rook...
+Detected model type: losChessVariant
+Simulation complete. Output: logs/los/los_rule3_rook_grid_log.csv

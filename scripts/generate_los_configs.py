@@ -45,27 +45,10 @@ RULES = {
     3: {"birthLow": 0.25, "birthHigh": 0.625, "survivalLow": 0.25, "survivalHigh": 0.625},
 }
 
-# seed patterns
-# sparse: same as adaptive model for direct comparison
-SEED_SPARSE = [(3, 6), (4, 5), (4, 6), (4, 7), (5, 5), (5, 7), (6, 5), (6, 6), (6, 7)]
-
-# dense: scattered across the board so LOS blocking has more material to work with.
-# with LOS blocking, effective neighborhoods shrink fast, so a denser initial
-# state gives the system enough energy to sustain longer evolution.
-SEED_DENSE = [
-    (1, 1), (1, 4), (1, 6),
-    (2, 2), (2, 5),
-    (3, 0), (3, 3), (3, 6),
-    (4, 1), (4, 4), (4, 7),
-    (5, 2), (5, 5),
-    (6, 0), (6, 3), (6, 6),
-    (7, 1), (7, 4), (7, 7),
-]
-
-SEED_PATTERNS = {
-    "sparse": SEED_SPARSE,
-    "dense": SEED_DENSE,
-}
+# seed pattern — 9-cell cluster, same as adaptive model for direct comparison.
+# showcase subset of LOS scenarios: 3 rules x 3 sliding pieces = 9 configs total.
+# (the dense/sparse ablations were dropped in favour of a focused 3x3 demo)
+SEED_PATTERN = [(3, 6), (4, 5), (4, 6), (4, 7), (5, 5), (5, 7), (6, 5), (6, 6), (6, 7)]
 
 VIEWER = [{"colors": [[255, 255, 255], [0, 0, 0]], "breaks": [0, 0.5, 1], "field": "alive"}]
 
@@ -109,21 +92,20 @@ os.makedirs(script_dir, exist_ok=True)
 
 generated = []
 
-for seed_name, seed_cells in SEED_PATTERNS.items():
-    for rule_num, rule_thresholds in RULES.items():
-        for piece_name in SLIDING_NEIGHBORHOODS:
-            config_name = f"los_{seed_name}_rule{rule_num}_{piece_name}"
-            filename = f"{config_name}_config.json"
+for rule_num, rule_thresholds in RULES.items():
+    for piece_name in SLIDING_NEIGHBORHOODS:
+        config_name = f"los_rule{rule_num}_{piece_name}"
+        filename = f"{config_name}_config.json"
 
-            config = build_config(piece_name, rule_num, rule_thresholds, seed_cells)
+        config = build_config(piece_name, rule_num, rule_thresholds, SEED_PATTERN)
 
-            filepath = os.path.join(config_dir, filename)
-            with open(filepath, "w") as f:
-                json.dump(config, f, indent=2)
-                f.write("\n")
+        filepath = os.path.join(config_dir, filename)
+        with open(filepath, "w", newline="\n") as f:
+            json.dump(config, f, indent=2)
+            f.write("\n")
 
-            script_name = f"run_{config_name}.sh"
-            script_content = f"""#!/bin/bash
+        script_name = f"run_{config_name}.sh"
+        script_content = f"""#!/bin/bash
 if [ ! -f bin/chess_variant ]; then
     echo "Error: bin/chess_variant not found. Run build_sim.sh first."
     exit 1
@@ -131,13 +113,13 @@ fi
 echo "Running {config_name}..."
 ./bin/chess_variant config/los/{filename} 60
 """
-            script_path = os.path.join(script_dir, script_name)
-            with open(script_path, "w") as f:
-                f.write(script_content)
-            os.chmod(script_path, 0o755)
+        script_path = os.path.join(script_dir, script_name)
+        with open(script_path, "w", newline="\n") as f:
+            f.write(script_content)
+        os.chmod(script_path, 0o755)
 
-            generated.append(config_name)
-            print(f"  {filename}")
+        generated.append(config_name)
+        print(f"  {filename}")
 
 # master run script
 master = "#!/bin/bash\n# Run all LOS scenarios\n"
@@ -145,7 +127,7 @@ master += "for f in scripts/los/run_los_*.sh; do\n"
 master += '    bash \"$f\"\n'
 master += "done\n"
 master_path = os.path.join(script_dir, "run_all_los.sh")
-with open(master_path, "w") as f:
+with open(master_path, "w", newline="\n") as f:
     f.write(master)
 os.chmod(master_path, 0o755)
 
