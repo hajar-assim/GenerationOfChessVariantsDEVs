@@ -1,0 +1,86 @@
+{
+  "scenario": {
+    "shape": [
+      8,
+      8
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "wrapped": false
+  },
+  "cells": {
+    "default": {
+      "delay": "transport",
+      "model": "propagationChessVariant",
+      "state": {
+        "activity": 0.0,
+        "phase": 0,
+        "stepsInPhase": 0,
+        "activeDuration": 3,
+        "decayRate": 0.3,
+        "spreadThreshold": 0.05
+      },
+      "neighborhood": [
+        {
+          "type": "moore",
+          "range": 1
+        }
+      ]
+    },
+    "seeds": {
+      "state": {
+        "activity": 1.0,
+        "phase": 1,
+        "stepsInPhase": 0,
+        "activeDuration": 3,
+        "decayRate": 0.3,
+        "spreadThreshold": 0.05
+      },
+      "cell_map": [
+        [
+          0,
+          0
+        ],
+        [
+          7,
+          7
+        ]
+      ]
+    }
+  },
+  "viewer": [
+    {
+      "colors": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          80,
+          80,
+          80
+        ],
+        [
+          160,
+          160,
+          160
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "breaks": [
+        0,
+        0.33,
+        0.66,
+        1.0
+      ],
+      "field": "activity"
+    }
+  ]
+}
