@@ -1,0 +1,353 @@
+{
+  "scenario": {
+    "shape": [
+      8,
+      8
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "wrapped": false
+  },
+  "cells": {
+    "default": {
+      "delay": "transport",
+      "model": "boardControl",
+      "state": {
+        "pieceType": 0,
+        "pieceColor": 0,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "neighborhood": [
+        {
+          "type": "moore",
+          "range": 7
+        }
+      ]
+    },
+    "piece_2_4": {
+      "state": {
+        "pieceType": 4,
+        "pieceColor": 2,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          7
+        ]
+      ]
+    },
+    "piece_2_2": {
+      "state": {
+        "pieceType": 2,
+        "pieceColor": 2,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          5
+        ]
+      ]
+    },
+    "piece_2_3": {
+      "state": {
+        "pieceType": 3,
+        "pieceColor": 2,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    "piece_2_5": {
+      "state": {
+        "pieceType": 5,
+        "pieceColor": 2,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    "piece_2_6": {
+      "state": {
+        "pieceType": 6,
+        "pieceColor": 2,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    "piece_2_1": {
+      "state": {
+        "pieceType": 1,
+        "pieceColor": 2,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    "piece_1_3": {
+      "state": {
+        "pieceType": 3,
+        "pieceColor": 1,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          3,
+          6
+        ],
+        [
+          7,
+          5
+        ]
+      ]
+    },
+    "piece_1_1": {
+      "state": {
+        "pieceType": 1,
+        "pieceColor": 1,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ]
+    },
+    "piece_1_2": {
+      "state": {
+        "pieceType": 2,
+        "pieceColor": 1,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          5,
+          2
+        ]
+      ]
+    },
+    "piece_1_4": {
+      "state": {
+        "pieceType": 4,
+        "pieceColor": 1,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          7
+        ]
+      ]
+    },
+    "piece_1_5": {
+      "state": {
+        "pieceType": 5,
+        "pieceColor": 1,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    "piece_1_6": {
+      "state": {
+        "pieceType": 6,
+        "pieceColor": 1,
+        "whiteInfluence": 0.0,
+        "blackInfluence": 0.0,
+        "control": 0.0,
+        "propagationRate": 0.08,
+        "step": 0
+      },
+      "cell_map": [
+        [
+          7,
+          4
+        ]
+      ]
+    }
+  },
+  "viewer": [
+    {
+      "colors": [
+        [
+          220,
+          38,
+          38
+        ],
+        [
+          235,
+          147,
+          147
+        ],
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          147,
+          175,
+          235
+        ],
+        [
+          37,
+          99,
+          235
+        ]
+      ],
+      "breaks": [
+        -10,
+        -2,
+        0,
+        2,
+        10
+      ],
+      "field": "control"
+    }
+  ]
+}
