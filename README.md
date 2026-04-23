@@ -1,4 +1,4 @@
-# Generation of Chess Variants — Adaptive Cell-DEVS Extensions
+# Generation of Chess Variants - Adaptive Cell-DEVS Extensions
 
 **Authors:** Hajar Assim (101232456), Hasib Khodayar (101225523)
 
@@ -18,13 +18,13 @@ This repository extends our Assignment 2 Cadmium v2 port of Fridenfalk's "Genera
 
 The core contribution is adaptive density-scaled thresholds that express birth/survival conditions as fractions of the neighborhood size, making Fridenfalk's rules work across all chess-piece topologies. On top of this we build six extensions:
 
-1. **Adaptive density-based thresholds** — birth/survival as fractions of neighborhood size.
-2. **All five Fridenfalk rules** — B23/S23 through B26/S26 plus the non-contiguous B235/S235 with a gap-exclusion mechanism.
-3. **Asymmetric Cell-DEVS rule zones** — different regions of the board run different Fridenfalk rules simultaneously using Cadmium's `AsymmCell` formalism.
-4. **Line-of-sight blocking** — sliding pieces (bishop, rook, queen) cannot see past live cells on straight lines, making the effective neighborhood dynamic.
-5. **Continuous-activity lifecycle model** — four-phase cell dynamics (dormant, activating, active, decaying) with continuous activity values, enabling wavefront visualization.
-6. **Board control influence analysis** — experimental model simulating territorial control via piece-movement-pattern influence projection with propagation.
-7. **Post-processing pipeline** — accumulation grids and board-quality metrics (coverage, symmetry, connectivity, hole count).
+1. **Adaptive density-based thresholds** - birth/survival as fractions of neighborhood size.
+2. **All five Fridenfalk rules** - B23/S23 through B26/S26 plus the non-contiguous B235/S235 with a gap-exclusion mechanism.
+3. **Asymmetric Cell-DEVS rule zones** - different regions of the board run different Fridenfalk rules simultaneously using Cadmium's `AsymmCell` formalism.
+4. **Line-of-sight blocking** - sliding pieces (bishop, rook, queen) cannot see past live cells on straight lines, making the effective neighborhood dynamic.
+5. **Continuous-activity lifecycle model** - four-phase cell dynamics (dormant, activating, active, decaying) with continuous activity values, enabling wavefront visualization.
+6. **Board control influence analysis** - experimental model simulating territorial control via piece-movement-pattern influence projection with propagation.
+7. **Post-processing pipeline** - accumulation grids and board-quality metrics (coverage, symmetry, connectivity, hole count).
 
 The full write-up is `ChessVariantGeneration_CellDEVS_Report.docx` in the repository root.
 
@@ -35,7 +35,7 @@ The full write-up is `ChessVariantGeneration_CellDEVS_Report.docx` in the reposi
 ```
 .
 ├── main/
-│   ├── main.cpp                              # driver — dispatches to one of 6 models by JSON config
+│   ├── main.cpp                              # driver - dispatches to one of 6 models by JSON config
 │   └── include/
 │       ├── chessVariantState.hpp             # A2 fixed-threshold state (binary alive/dead)
 │       ├── chessVariantCell.hpp              # A2 fixed-threshold cell (B23/S23)
@@ -209,9 +209,9 @@ Runs all 85 scenarios, writes per-scenario CSV logs, aggregates board-quality me
 python3 scripts/accumulate_board.py <log.csv> [--last N] [--threshold T] [--out FILE]
 ```
 
-- `--last N` — number of final generations to accumulate (default 20)
-- `--threshold T` — fraction of accumulated generations a cell must be alive to count as filled (default 0.5)
-- `--out FILE` — output file (default stdout)
+- `--last N` - number of final generations to accumulate (default 20)
+- `--threshold T` - fraction of accumulated generations a cell must be alive to count as filled (default 0.5)
+- `--out FILE` - output file (default stdout)
 
 Example:
 
@@ -228,10 +228,10 @@ python3 scripts/board_metrics.py --from-log <log.csv> [--last N] [--threshold T]
 
 Computes:
 
-- **Coverage** — fraction of filled cells (ideal for a chess board: 0.500)
-- **Symmetry** — average of horizontal, vertical, and 180-degree rotational symmetry (ideal: 1.000)
-- **Connectivity** — number of 4-connected components of filled cells (ideal: 1)
-- **Holes** — number of enclosed empty regions not touching the grid border
+- **Coverage** - fraction of filled cells (ideal for a chess board: 0.500)
+- **Symmetry** - average of horizontal, vertical, and 180-degree rotational symmetry (ideal: 1.000)
+- **Connectivity** - number of 4-connected components of filled cells (ideal: 1)
+- **Holes** - number of enclosed empty regions not touching the grid border
 
 ---
 
@@ -284,13 +284,13 @@ python3 scripts/visualize_asymm.py --all
 
 ## Key Findings
 
-- **Adaptive rook recovery** — fixed B23/S23 rook goes extinct at gen 3 (0.031 coverage); adaptive density sustains 60 gens (0.875 coverage). Same seed, same topology.
-- **Rule 3 Moore near-ideal** — 0.496 coverage, 1.000 symmetry, within 0.4% of the theoretical 50% chess board.
-- **Rule 5 gap mechanism** — produces 11 holes vs Rule 3's 0, despite identical outer density range.
-- **Asymmetric zone boundaries** — symmetry drops from 1.000 to 0.427 when different zones run different rules.
-- **LoS self-shielding** — bishop Rule 1 revives from 0.000 (extinct) to 0.125 with line-of-sight blocking.
-- **Bishop colour-parity binding** — rule4_bishop has 0.500 coverage but 32 components and 18 holes due to diagonal-only reach.
-- **Lifecycle rook invariant** — all three speed variants produce identical metrics (0.375 coverage).
+- **Adaptive rook recovery** - fixed B23/S23 rook goes extinct at gen 3 (0.031 coverage); adaptive density sustains 60 gens (0.875 coverage). Same seed, same topology.
+- **Rule 3 Moore near-ideal** - 0.496 coverage, 1.000 symmetry, within 0.4% of the theoretical 50% chess board.
+- **Rule 5 gap mechanism** - produces 11 holes vs Rule 3's 0, despite identical outer density range.
+- **Asymmetric zone boundaries** - symmetry drops from 1.000 to 0.427 when different zones run different rules.
+- **LoS self-shielding** - bishop Rule 1 revives from 0.000 (extinct) to 0.125 with line-of-sight blocking.
+- **Bishop colour-parity binding** - rule4_bishop has 0.500 coverage but 32 components and 18 holes due to diagonal-only reach.
+- **Lifecycle rook invariant** - all three speed variants produce identical metrics (0.375 coverage).
 
 Full analysis in the project report.
 
