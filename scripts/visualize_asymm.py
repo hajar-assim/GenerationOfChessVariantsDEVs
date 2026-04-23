@@ -7,7 +7,7 @@ and overlays alive cells as dark circles. The rule boundary is visible at all
 times, making the asymmetric contribution obvious.
 
 Usage:
-    python3 scripts/visualize_asymm.py logs/asymm_r3_r5_bishop_grid_log.csv
+    python3 scripts/visualize_asymm.py logs/asymmetric/asymm_r3_r5_bishop_grid_log.csv
     python3 scripts/visualize_asymm.py --all
 
 Output:
@@ -176,9 +176,9 @@ def main():
     args = p.parse_args()
 
     if args.all:
-        logs = sorted(glob.glob("logs/asymm_*_grid_log.csv"))
+        logs = sorted(glob.glob("logs/asymmetric/asymm_*_grid_log.csv"))
         if not logs:
-            print("No asymm logs found in logs/", file=sys.stderr)
+            print("No asymm logs found in logs/asymmetric/", file=sys.stderr)
             sys.exit(1)
         for lg in logs:
             process(lg, args.out_dir)

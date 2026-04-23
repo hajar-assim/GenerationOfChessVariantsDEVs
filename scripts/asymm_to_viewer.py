@@ -10,7 +10,7 @@ This script:
   2. Emits a minimal grid-style config with scenario.shape = [8, 8].
 
 Usage:
-    python3 scripts/asymm_to_viewer.py logs/asymm_r3_r5_bishop_grid_log.csv
+    python3 scripts/asymm_to_viewer.py logs/asymmetric/asymm_r3_r5_bishop_grid_log.csv
     python3 scripts/asymm_to_viewer.py --all
 
 Output:
@@ -76,14 +76,14 @@ def process(log_path):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("log", nargs="?", help="asymm log CSV (e.g. logs/asymm_*_grid_log.csv)")
+    p.add_argument("log", nargs="?", help="asymm log CSV (e.g. logs/asymmetric/asymm_*_grid_log.csv)")
     p.add_argument("--all", action="store_true", help="process every asymm log in logs/")
     args = p.parse_args()
 
     if args.all:
-        logs = sorted(glob.glob("logs/asymm_*_grid_log.csv"))
+        logs = sorted(glob.glob("logs/asymmetric/asymm_*_grid_log.csv"))
         if not logs:
-            print("No asymm logs found in logs/", file=sys.stderr)
+            print("No asymm logs found in logs/asymmetric/", file=sys.stderr)
             sys.exit(1)
         for lg in logs:
             process(lg)
