@@ -2,21 +2,21 @@
 
 **Authors:** Hajar Assim (101232456), Hasib Khodayar (101225523)
 
-**Course:** SYSC 5104/4906G — Methodologies for Discrete Event Modelling and Simulation
+**Course:** SYSC 5104/4906G - Methodologies for Discrete Event Modelling and Simulation
 
 **Instructor:** Dr. Gabriel Wainer
 
 **Due Date:** April 23, 2026
 
-**Track:** Project I(a) — Redefining and Expanding the Assignment 2 Model
+**Track:** Project I(a) - Redefining and Expanding the Assignment 2 Model
 
 ---
 
 ## Introduction
 
-This repository extends our Assignment 2 Cadmium v2 port of Fridenfalk's "Generation of Chess Variants" cellular automaton. The original model applied a modified Game of Life rule (B23/S23) on small wrapped grids. Assignment 2 exposed a hard limitation: the fixed 2-or-3-neighbor rule is calibrated for ~8-neighbor topologies, so chess-piece neighborhoods with larger reach (rook, bishop, queen) collapsed within 2-3 generations.
+This repository extends our Assignment 2 Cadmium v2 port of Fridenfalk's "Generation of Chess Variants" cellular automaton. The original model applied a modified Game of Life rule (B23/S23) on small wrapped grids. It is built off of Assignment 2, which exposed a hard limitation: the fixed 2-or-3-neighbor rule is calibrated for ~8-neighbor topologies, so chess-piece neighborhoods with larger reach (rook, bishop, queen) collapsed within 2-3 generations.
 
-The core contribution is **adaptive density-scaled thresholds** that express birth/survival conditions as fractions of the neighborhood size, making Fridenfalk's rules work across all chess-piece topologies. On top of this we build six extensions:
+The core contribution is adaptive density-scaled thresholds that express birth/survival conditions as fractions of the neighborhood size, making Fridenfalk's rules work across all chess-piece topologies. On top of this we build six extensions:
 
 1. **Adaptive density-based thresholds** — birth/survival as fractions of neighborhood size.
 2. **All five Fridenfalk rules** — B23/S23 through B26/S26 plus the non-contiguous B235/S235 with a gap-exclusion mechanism.
